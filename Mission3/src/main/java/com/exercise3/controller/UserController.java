@@ -64,10 +64,5 @@ public class UserController {
     {
         return "user/settings";
     }
-
-    @GetMapping("/activity")
-    public String activity()
-    {
-        return "user/activity";
-    }
 }
+
