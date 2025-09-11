@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8"/>
+  <title>Admin Dashboard</title>
+  <link rel="stylesheet" th:href="@{css/styles.css}"/>
+</head>
+<body>
+  <div th:replace="fragments/header :: header"></div>
+
+  <main>
+    <h2>Admin Dashboard</h2>
+    <p>Total users: <span th:text="${totalUsers}">0</span></p>
+    <p><a th:href="@{/admin/users}">Manage Users</a> | <a th:href="@{/admin/roles}">Manage Roles</a> | <a th:href="@{/admin/reports}">Reports</a></p>
+  </main>
+
+  <div th:replace="fragments/footer :: footer"></div>
+</body>
+</html>

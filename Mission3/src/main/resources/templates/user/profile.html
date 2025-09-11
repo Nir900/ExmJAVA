@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8"/>
+  <title>Profile</title>
+  <link rel="stylesheet" th:href="@{css/styles.css}"/>
+</head>
+<body>
+  <div th:replace="fragments/header :: header"></div>
+
+  <main>
+    <h2>Profile</h2>
+    <p>ID: <span th:text="${user.id}">1</span></p>
+    <p>Username: <span th:text="${user.username}">user</span></p>
+    <p>Roles: <span th:each="r : ${user.roles}" th:text="${r.name + ' '}"></span></p>
+    <p><a th:href="@{/user/profile/edit}">Edit profile</a></p>
+  </main>
+
+  <div th:replace="fragments/footer :: footer"></div>
+</body>
+</html>

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8"/>
+  <title>Home</title>
+  <link rel="stylesheet" th:href="@{css/styles.css}"/>
+</head>
+<body>
+  <div th:replace="fragments/header :: header"></div>
+
+  <main>
+    <h1>Home</h1>
+    <p th:if="${isAuthenticated}">Welcome back, <strong th:text="${username}">user</strong>!</p>
+    <p th:unless="${isAuthenticated}">Welcome to the my application. Please login or register.</p>
+  </main>
+
+  <div th:replace="fragments/footer :: footer"></div>
+</body>
+</html>

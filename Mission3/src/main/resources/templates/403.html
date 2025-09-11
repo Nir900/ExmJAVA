@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8"/>
+  <title>403 Forbidden</title>
+  <link rel="stylesheet" th:href="@{css/styles.css}"/>
+</head>
+<body>
+  <div th:replace="fragments/header :: header"></div>
+
+  <main>
+    <h2>403 - Forbidden</h2>
+    <p>You do not have permission to access this page.</p>
+    <p><a th:href="@{/}">Return home</a></p>
+  </main>
+
+  <div th:replace="fragments/footer :: footer"></div>
+</body>
+</html>
