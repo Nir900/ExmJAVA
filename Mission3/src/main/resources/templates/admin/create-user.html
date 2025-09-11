@@ -22,7 +22,7 @@
         <label>Role:</label>
         <div th:each="r : ${allRoles}">
           <label>
-            <input type="radio" th:name="roles" th:value="${r.name}"/> 
+            <input type="checkbox" th:name="roles" th:value="${r.name}"/> 
             <span th:text="${r.name}"></span>
           </label>
         </div>
@@ -36,3 +36,4 @@
 
 </body>
 </html>
+
