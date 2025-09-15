@@ -188,14 +188,14 @@ public class Main {
             String secret = "AttackAtDawn";
             List<String> chaffMessages = List.of("Hello", "World", "Fun", "Spam", "RuN");
 
-            String sercetTag = "KEY0123456789";
+            String secretTag = "KEY0123456789";
 
             // Chaffing
-            List<String> mixed = ChaffWinnow.chaff(secret, chaffMessages, sercetTag);
+            List<String> mixed = ChaffWinnow.chaff(secret, chaffMessages, secretTag);
             System.out.println("Mixed messages: " + mixed);
 
             // Winnowing
-            List<String> extracted = ChaffWinnow.winnow(mixed, sercetTag);
+            List<String> extracted = ChaffWinnow.winnow(mixed, secretTag);
             System.out.println("Extracted secret: " + extracted + "\n");
         }
 
@@ -236,3 +236,4 @@ public class Main {
         }
     }
 }
+
