@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8"/>
+  <title>User Dashboard</title>
+  <link rel="stylesheet" th:href="@{css/styles.css}"/>
+</head>
+<body>
+  <div th:replace="fragments/header :: header"></div>
+
+  <main>
+    <h2>User Dashboard</h2>
+    <p>Welcome <span th:text="${username}">user</span></p>
+    <p><a th:href="@{/user/profile}">View profile</a> | <a th:href="@{/user/settings}">Settings</a></p>
+  </main>
+
+  <div th:replace="fragments/footer :: footer"></div>
+</body>
+</html>

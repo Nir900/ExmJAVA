@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+  <body>
+    <div th:fragment="header">
+      <nav>
+        <a th:href="@{/}">Home</a> |
+        <a th:href="@{/about}">About</a> |
+        <a th:href="@{/contact}">Contact</a> |
+        <span th:if="${isAuthenticated}">
+          <a th:href="@{/user/dashboard}">My Dashboard</a> |
+          <a th:href="@{/user/profile}">Profile</a> |
+        </span>
+        <span th:if="${roles.contains('ROLE_ADMIN')}">
+          <a th:href="@{/admin/dashboard}">Admin</a> |
+        </span>
+        <span th:if="${isAuthenticated}">
+          <form th:action="@{/logout}" method="post" style="display:inline">
+            <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}" />
+            <button type="submit">Logout (<span th:text="${username}">user</span>)</button>
+          </form>
+        </span>
+        <span th:unless="${isAuthenticated}">
+          <a th:href="@{/login}">Login</a> |
+          <a th:href="@{/register}">Register</a>
+        </span>
+      </nav>
+      <hr/>
+    </div>
+  </body>
+</html>
